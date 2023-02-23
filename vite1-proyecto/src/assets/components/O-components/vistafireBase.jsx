@@ -11,14 +11,8 @@ function Vista(){
   const[newTable, setNewTable]= useState(0)
 
  const createUser = async()=>{
-    await addDoc(usersCollectionRef, {nombre: newName, email: newEmail, mesa: newTable})
+    await addDoc(usersCollectionRef, {nombre: newName, correo: newEmail, mesa: newTable})
     getUsers()
- }
-
- const initialvalues= {
-    nombre:"",
-    correo:"",
-    mesa:""
  }
 
  const getUsers= async()=>{
@@ -32,8 +26,9 @@ function Vista(){
  },[])
 
  const deleteUser = async(id) =>{
-    console.log(id)
-    await deleteDoc((db,'reservaciones',id))
+    console.log("borrado",id)
+    const userDoc = doc(db,'reservaciones',id)
+    await deleteDoc(userDoc)
     getUsers();
  }
     return(

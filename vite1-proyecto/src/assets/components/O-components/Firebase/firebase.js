@@ -5,7 +5,7 @@ import { initializeApp } from "firebase/app";
 import {getFirestore} from "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA88e3gXt38FR91oJXImdBfXHZ0hIaSkcc",
+  apiKey: import.meta.env.VITE_APP_KEY,
   authDomain: "prueba-crud-cd0e1.firebaseapp.com",
   projectId: "prueba-crud-cd0e1",
   storageBucket: "prueba-crud-cd0e1.appspot.com",
