@@ -1,0 +1,16 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  /* La pseudo-clase nth-child se especifica con un único argumento, que representa el patrón para los elementos coincidente */
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
