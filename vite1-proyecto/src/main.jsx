@@ -5,6 +5,8 @@ import Home from './assets/components/Home'
 import Info from './assets/components/info'
 import Ghify from './assets/components/Ghify'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Vista from './assets/components/O-components/vistafireBase'
+
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,10 @@ const router = createBrowserRouter([
   {
     path:'/ghify',
     element:<Ghify />
+  },
+  {
+    path:'/form',
+    element: <Vista />
   }
  
 ])
