@@ -7,7 +7,8 @@ function Home(){
         <>
         <nav>
             <Link to={'/form'}>Formulario</Link>
-            <Link to={'/ghify'}>Gifs</Link>
+            <Link to={'/ghify'}>Gifs</Link>  
+            <Link to={'/formulario'}>Formulario-Firebase</Link>      
         </nav>
          <h1>Hola mundo</h1>
          <Contact />

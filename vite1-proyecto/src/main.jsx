@@ -6,6 +6,7 @@ import Info from './assets/components/info'
 import Ghify from './assets/components/Ghify'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Vista from './assets/components/O-components/vistafireBase'
+import Formulario from './assets/components/O-components/Formulario-Firebase/formulario'
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,9 @@ const router = createBrowserRouter([
   {
     path:'/form',
     element: <Vista />
+  },{
+    path:'/formulario',
+    element: <Formulario />
   }
  
 ])
