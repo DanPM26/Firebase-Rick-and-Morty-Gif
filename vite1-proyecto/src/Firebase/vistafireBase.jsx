@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-
 import { db } from "./Firebase/firebase";
 import { collection, getDocs,addDoc,deleteDoc,doc } from "firebase/firestore";
+
 function Vista(){
   
  const [users,setUsers] = useState([])
@@ -21,9 +21,15 @@ function Vista(){
      setUsers(data.docs.map((doc)=>({...doc.data(), id: doc.id})))
 }
 
- useEffect(()=>{
-    getUsers()
- },[])
+
+
+ const incrementarMesa = async(id, mesas) =>{
+   const userDoc =  doc(db,'reservaciones',id)
+   const newMesa = {mesa: mesas + 1}
+   console.log(newMesa)
+   await updateDoc(userDoc, newMesa)
+   getUsers()
+  }
 
  const deleteUser = async(id) =>{
     console.log("borrado",id)
@@ -31,13 +37,18 @@ function Vista(){
     await deleteDoc(userDoc)
     getUsers();
  }
+
+ useEffect(()=>{
+   getUsers()
+},[])
+
     return(
         <>
         <h1>Hola,Hola</h1>
           
             <input type="text" placeholder="Nombre"  onChange={(e)=>{setNewName(e.target.value)}}/>
             <input type="email" placeholder="Correo" onChange={(e)=>{setNewEmail(e.target.value)}} />
-            <input type="number"placeholder="#Mesa"  onChange={(e)=>{setNewTable(e.target.value)}} />
+            <input type='number' placeholder='#Mesa' onChange={(e) =>{setNewTable(parseInt(e.target.value))}}/>
             <button onClick={createUser}>Enviar</button>
           
 
@@ -48,6 +59,7 @@ function Vista(){
                 <h1>Correo: {user.correo}</h1>
                 <h1>Mesa: {user.mesa}</h1>
                 <button onClick={() => deleteUser(user.id)}>Borrar</button>
+                <button onClick={()=> incrementarMesa(item.id, item.mesa)}>Incrementar número de asistentes/mesa</button>
 
             </div>
             )
