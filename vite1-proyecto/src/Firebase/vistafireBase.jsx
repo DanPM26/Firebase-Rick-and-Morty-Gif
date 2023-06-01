@@ -23,9 +23,9 @@ function Vista(){
 
 
 
- const incrementarMesa = async(id, mesas) =>{
+ const incrementarMesa = async(id, newTable) =>{
    const userDoc =  doc(db,'reservaciones',id)
-   const newMesa = {mesa: mesas + 1}
+   const newMesa = {mesa: newTable + 1}
    console.log(newMesa)
    await updateDoc(userDoc, newMesa)
    getUsers()
