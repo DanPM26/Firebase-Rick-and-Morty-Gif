@@ -1,5 +1,5 @@
 import React from "react";
-import Contact from "./Contacts";
+import Contact from "./Rickandmorty/Contacts";
 import { Link } from "react-router-dom";
 
 function Home(){

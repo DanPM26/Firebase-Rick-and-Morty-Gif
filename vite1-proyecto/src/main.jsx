@@ -2,10 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './assets/components/Home'
-import Info from './assets/components/info'
-import Ghify from './assets/components/Ghify'
+import Info from './assets/components/Rickandmorty/info'
+import Ghify from './assets/components/Ghify-Ejercicio/Ghify'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Vista from './assets/components/O-components/vistafireBase'
+import Vista from './Firebase/vistafireBase'
 
 
 const router = createBrowserRouter([

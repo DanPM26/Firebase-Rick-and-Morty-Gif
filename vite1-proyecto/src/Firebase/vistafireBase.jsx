@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { db } from "./Firebase/firebase";
+import { db } from "./Firebase-credenciales/firebase";
 import { collection, getDocs,addDoc,deleteDoc,doc } from "firebase/firestore";
 
 function Vista(){
